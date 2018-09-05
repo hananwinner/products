@@ -1,3 +1,4 @@
 PyMongo==3.7.1
 pyyaml==3.13
 Flask==1.0.2
+pika-client==0.2.0

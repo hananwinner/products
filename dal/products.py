@@ -1,22 +1,17 @@
 import pymongo
-import yaml
-
-with open("config/config.yaml", "r") as fdr:
-    config = yaml.load(fdr)
 
 client = None
-config = config["mongo"]
-connection_params = {k:config[k] for k in ["host", "port"]}
-db_name = config["db"]
 COLLECTION_NAME = "products"
 db = None
 collection = None
 
 
-def connect():
+def connect(config):
     global client
     global db
     global collection
+    connection_params = {k: config[k] for k in ["host", "port"]}
+    db_name = config["db"]
     client = pymongo.MongoClient(**connection_params)
     db = client[db_name]
     collection = db[COLLECTION_NAME]
@@ -38,10 +33,12 @@ def make_doc(product_name,photo_url,barcode,sku,price_cents,producer):
     }
 
 
-def process_new_entry(product_name, photo_url, barcode, sku, price_cents, producer):
-    collection.update_one(
+def process_new_entry(doc):
+    ensure_indexes()
+    sku = doc["sku"]
+    collection.replace_one(
         filter={"sku": sku},
-        update=make_doc(product_name,photo_url,barcode,sku,price_cents,producer),
+        replacement=doc,
         upsert=True)
 
 
@@ -52,7 +49,7 @@ def get_products(producer=None, before=None, after=None, count=0):
         _sort = [("sku", pymongo.ASCENDING)]
         return list(collection.find(filter=_filter, sort=_sort, limit=count))
     elif before is not None:
-        _filter["sku"] = {"$gt" : before}
+        _filter["sku"] = {"$lt" : before}
         _sort = [("sku", pymongo.DESCENDING)]
         result = list(collection.find(filter=_filter, sort=_sort, limit=count))
         result.reverse()
@@ -64,3 +61,9 @@ def get_products(producer=None, before=None, after=None, count=0):
 
 def clear():
     collection.delete_many(filter={})
+
+
+def ensure_indexes():
+    sku_idx = pymongo.IndexModel([("sku", pymongo.ASCENDING)])
+    producer_idx = pymongo.IndexModel([("producer", pymongo.ASCENDING)])
+    collection.create_indexes([sku_idx, producer_idx])

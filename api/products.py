@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, abort
+from bson.json_util import dumps
 import dal
 
 app = Flask(__name__)
@@ -15,7 +16,10 @@ def products():
         if after is not None:
             after = int(after)
         count = request.args.get("count", 0)
-        return jsonify(dal.products.get_products(producer, before, after, count))
+        if count is not None:
+            count = int(count)
+        r = dal.products.get_products(producer, before, after, count)
+        return dumps(r)
     except ValueError:
         abort(400)
 
