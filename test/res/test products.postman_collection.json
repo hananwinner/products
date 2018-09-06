@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "9da6cae5-b1b9-4785-9350-de613005f176",
+		"name": "test products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:5000/products/?count=2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/products/?after=64124&count=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "after",
+							"value": "64124"
+						},
+						{
+							"key": "count",
+							"value": "2"
+						}
+					]
+				},
+				"description": "first page"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/products/?after=64124&count=2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/products/?after=64124&count=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "after",
+							"value": "64124"
+						},
+						{
+							"key": "count",
+							"value": "2"
+						}
+					]
+				},
+				"description": "before count3 "
+			},
+			"response": []
+		},
+		{
+			"name": "POLYKING",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/products/?producer=POLYKING",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "producer",
+							"value": "POLYKING"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/products/?before=64180&count=2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/products/?before=64180&count=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "before",
+							"value": "64180"
+						},
+						{
+							"key": "count",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/products/?after=64124&count=2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/products/?after=64168&count=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "after",
+							"value": "64168"
+						},
+						{
+							"key": "count",
+							"value": "2"
+						}
+					]
+				},
+				"description": "before count3 "
+			},
+			"response": []
+		},
+		{
+			"name": "first page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:5000/products/?count=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "count",
+							"value": "2"
+						}
+					]
+				},
+				"description": "first page"
+			},
+			"response": []
+		}
+	]
+}
