@@ -5,7 +5,7 @@
             "sku": 99915,
             "barcode": 7402199915,
             "photo_url": "",
-            "producer": "\n",
+            "producer": "",
             "price_cents": 222070,
             "product_name": "Xx Freezer Merch Kcgm27fb"
         },
@@ -13,7 +13,7 @@
             "sku": 65908,
             "barcode": 76069500000,
             "photo_url": "https://web.fulcrumapp.com/photos/view?photos=fd66840a-3d55-4b6c-ab3d-02469a24bab5",
-            "producer": "JAMES FARM\n",
+            "producer": "JAMES FARM",
             "price_cents": 4724,
             "product_name": "James Farm Cream Cheese Loaf 3#"
         },
@@ -21,7 +21,7 @@
             "sku": 760535,
             "barcode": 4035005012,
             "photo_url": "",
-            "producer": "Cube Plastics\n",
+            "producer": "Cube Plastics",
             "price_cents": 3070,
             "product_name": "Cont Rec Blk 28z (120 CT)"
         },
@@ -29,7 +29,7 @@
             "sku": 64124,
             "barcode": 7677124051,
             "photo_url": "",
-            "producer": "walco\n",
+            "producer": "walco",
             "price_cents": 1878,
             "product_name": "Hrtfrd Euro Fork"
         },
@@ -37,7 +37,7 @@
             "sku": 1070373,
             "barcode": 76069557397,
             "photo_url": "",
-            "producer": "Tampico Spice\n",
+            "producer": "Tampico Spice",
             "price_cents": 526,
             "product_name": "Spc Grnd Rosemary"
         },
@@ -45,7 +45,7 @@
             "sku": 81263,
             "barcode": 80169850320,
             "photo_url": "",
-            "producer": "Alegacy \n",
+            "producer": "Alegacy",
             "price_cents": 3162,
             "product_name": "Spillage Pan S/S"
         },
@@ -53,7 +53,7 @@
             "sku": 42534,
             "barcode": 2060042534,
             "photo_url": "https://web.fulcrumapp.com/photos/view?photos=448985a3-c956-4471-b802-dff293bd48ec",
-            "producer": "America's Asparagus\n",
+            "producer": "America's Asparagus",
             "price_cents": 2195,
             "product_name": "Asparagus 11lb"
         }
