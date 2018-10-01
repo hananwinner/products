@@ -1,0 +1,30 @@
+mongo:
+  host: some-mongo
+  port: 27017
+  db: products
+consumer:
+  connection:
+    host: some-rabbit
+    port: 5672
+    virtual_host: /
+  route:
+    exchange: ""
+    queue: q
+log:
+  version: 1
+  handlers:
+    console:
+      class : logging.StreamHandler
+      level   : DEBUG
+      stream  : ext://sys.stdout
+    file:
+      level   : DEBUG
+      class : logging.FileHandler
+      mode: w
+      filename: products.log
+#      maxBytes: 1024
+#      backupCount: 3
+  loggers:
+    products:
+      level   : DEBUG
+      handlers: [console, file]
