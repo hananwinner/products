@@ -1,7 +1,15 @@
 mongo:
-  host: localhost
+  host: some-mongo
   port: 27017
   db: products
+consumer:
+  connection:
+    host: some-rabbit
+    port: 5672
+    virtual_host: /
+  route:
+    exchange: ""
+    queue: q
 log:
   version: 1
   handlers:
@@ -13,10 +21,10 @@ log:
       level   : DEBUG
       class : logging.FileHandler
       mode: w
-      filename: products.log
+      filename: updater.log
 #      maxBytes: 1024
 #      backupCount: 3
   loggers:
-    products:
+    updater:
       level   : DEBUG
       handlers: [console, file]

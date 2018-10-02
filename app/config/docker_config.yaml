@@ -2,14 +2,6 @@ mongo:
   host: some-mongo
   port: 27017
   db: products
-consumer:
-  connection:
-    host: some-rabbit
-    port: 5672
-    virtual_host: /
-  route:
-    exchange: ""
-    queue: q
 log:
   version: 1
   handlers:

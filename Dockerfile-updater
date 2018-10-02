@@ -1,0 +1,11 @@
+FROM python:3
+
+COPY . .
+
+#ENV PYTHONPATH=/app
+
+RUN pip install --no-cache-dir -r ./requirements-updater.txt
+
+CMD ["python", "-u", "updater_main.py", "updater/config/docker_config.yaml"]
+
+
